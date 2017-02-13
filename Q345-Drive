@@ -1,0 +1,93 @@
+class gasTank{// set gasTank
+	private static double amount = 0;
+	
+	public gasTank(double amount){
+		this.amount = amount;
+	}
+	public void addGas(double amount){
+		this.amount+=amount;
+	}
+	public void useGas (double amount){
+		this.amount -= amount;
+	}
+	public double getGasLevel(){
+	return  amount;	
+	}	
+}
+class Car{// set car
+	private double minimumAmount;
+	private double MPG;//miles per gallon;
+	private gasTank a = new gasTank(20);
+	private double maximumAmount= a.getGasLevel();
+	
+	public Car (double minimumAmount,double MPG){
+	this.minimumAmount = minimumAmount;
+	this.MPG = MPG;
+	}
+
+	public double getminimumAmount(){
+		return minimumAmount;
+	}
+	
+	public double getMPG(){
+	return MPG;
+	}
+	
+	public double getmaximumAmount(){
+		return maximumAmount;
+	}
+	public void setminimumAmount(double minimumAmount){
+		 this.minimumAmount = minimumAmount;
+	}
+	
+	public void setMPG (double MPG){
+	this.MPG = MPG;
+	}
+	
+	public double MaximumDistance(double maximumAmount, double minimumAmount,double MPG){
+		System.out.println(MPG*(maximumAmount-minimumAmount));
+		return MPG*(maximumAmount-minimumAmount);
+		//intend to obtain the actual distance that the car can drive based on gasAmount;
+	}
+	
+}
+class Driver{
+	private double milesOfdestination;
+    private Car a = new Car(0.5,18.0);
+ 
+    
+	public Driver(double milesOfdestination){
+		this.milesOfdestination = milesOfdestination;
+	}
+	public double getmilesOfdestination(){
+		return milesOfdestination;
+	}
+	public void setmilesOfdestination(double milesOfdestination){
+		this.milesOfdestination = milesOfdestination;
+	}
+	
+	
+	public boolean isAmountcheck(Car car,double milesOfestination){
+		  // intend to check the distance of destination if within the 
+		//distance the gas amount can support based on current gas amount and MPG;
+			if (milesOfdestination > car.MaximumDistance){
+				return true;
+			}
+			else 
+				return false;
+	 }
+	public void DriveCar(double amount,double milesOfdestination){
+		if (isAmountcheck(milesOfdestination)){
+			System.out.println("Gas is enough");	
+		}
+		else 
+			System.out.println("Gas is not enough");
+	}
+}
+public class DriveCar{
+	public static void main (String[] args){
+	Driver A = new Driver(50);
+	// not be able to fix and  finish in time. I'll try to improve the code later.
+	}
+}
+
