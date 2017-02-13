@@ -1,0 +1,48 @@
+class Book{
+    private String title;
+	private double price;
+	
+	public Book (String title, double price){
+	this. title = title;
+	this. price = price;
+	}
+	
+	public String getTitle(){
+		return title;
+	}
+	public void setTitle(String title){
+		this.title = title;
+	}
+	public double getPrice(){
+		return price;
+	}
+	public void setPrice(double price){
+		this.price = price;
+	}
+}
+
+class Customer{
+    public double buybook(Book book, int numberOfbook){
+     double price; //obtain each book price, and number of book customer wants to buy
+     price = book.getPrice()*numberOfbook;
+     System.out.println("Price for "+numberOfbook+" Book "+book.getTitle()+" is "+price);
+     return price;
+    }
+    	
+}
+
+public class bookshop {
+
+	public static void main(String[] args) {
+	Book a = new Book("a", 9.99);
+	Book b = new Book("b", 10.99);
+	Book c = new Book("c", 11.99);
+	Customer ONE = new Customer();
+	double Totalprice = 0.00;
+	
+	System.out.println("The receipt for customer ONE: ");
+	Totalprice = ONE.buybook(a, 1)+ONE.buybook(b, 2)+ONE.buybook(c, 3);
+	System.out.println("The total price for the customer is "+Totalprice);
+	}
+
+}
