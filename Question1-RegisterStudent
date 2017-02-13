@@ -1,0 +1,116 @@
+import java.util.Arrays;
+
+class Student{
+		    private String name;
+		    private int id;
+		    
+		    public Student(String name, int id) {
+		        this.name = name;
+		        this.id = id;
+		    }
+		    public String getName() {
+		        return name;
+		    }
+
+		    public void setName(String name) {
+		        this.name = name;
+		    } 
+		    public int getid(){
+		    	return id;
+		    }
+		    public void setID(int id){
+		    	this.id = id;
+		    }
+		          
+		}
+			
+class Course{
+		    private String title;
+		    private int numberOfStudent;
+		    private Student[] registeredStudent = new Student[10];
+		    
+		    public Course(String title, int numberOfStudent) {
+		        this.title = title;
+		        this.numberOfStudent = numberOfStudent;
+		    }
+
+		    public String gettTitle() {
+		        return title;
+		    }
+
+		    public void setTitle(String title) {
+		        this.title = title;
+		    }
+		    public int getnumberOfStudent(){
+		    	return numberOfStudent;
+		    }
+		    public void setnumberOfStudent(int numberOfStudent){
+		    	this.numberOfStudent = numberOfStudent;
+		    }
+		    public Student[] getStudent(){
+		    	
+		    	return this.registeredStudent;
+			}
+		    
+		    public boolean isFull(){
+		    	if (numberOfStudent < 10)
+		    	{
+		    		return false;
+		    	}
+		    	else 
+		    		return true;
+			}
+		    
+		    public void registerStudent (Student student){ 
+		    System.out.println(Arrays.toString(registeredStudent));
+		    
+		    if (!isFull()){
+		    this.registeredStudent[numberOfStudent] = student;
+		    this.numberOfStudent++;//if still position, register student
+		    }                 
+		    else{
+		    System.out.println("The course JavaProgramming is full!");
+		    }
+		    	
+			}
+}
+public class StudentRegistration {
+	public static void main (String[] args){
+		Student ONE = new Student("one", 1);
+		Student TWO = new Student("TWO", 2);
+		Student THREE = new Student("THREE", 3);
+		Student FOUR = new Student("FOUR", 4);
+		Student FIVE = new Student("FIVE", 5);
+		Student SIX = new Student("SIX", 6);
+		Student SEVEN = new Student("SEVEN", 7);
+		Student EIGHT = new Student("EIGHT", 8);
+		Student NINE = new Student("NINE", 9);
+		Student TEN = new Student("TEN", 10);
+		Student ELEVEN = new Student("ELEVEN", 11);
+		
+		Course Javaprogramming = new Course ("JavaProgramming", 0);
+		Javaprogramming.getStudent();
+		Javaprogramming.registerStudent(ONE);
+		Javaprogramming.getStudent();
+		Javaprogramming.registerStudent(TWO);
+		Javaprogramming.getStudent();
+		Javaprogramming.registerStudent(THREE);
+		Javaprogramming.getStudent();
+		Javaprogramming.registerStudent(FOUR);
+		Javaprogramming.getStudent();
+		Javaprogramming.registerStudent(FIVE);
+		Javaprogramming.getStudent();
+		Javaprogramming.registerStudent(SIX);
+		Javaprogramming.getStudent();
+		Javaprogramming.registerStudent(SEVEN);
+		Javaprogramming.getStudent();
+		Javaprogramming.registerStudent(EIGHT);
+		Javaprogramming.getStudent();
+		Javaprogramming.registerStudent(NINE);
+		Javaprogramming.getStudent();
+		Javaprogramming.registerStudent(TEN);
+		Javaprogramming.getStudent();
+		Javaprogramming.registerStudent(ELEVEN);
+		
+		}
+}
