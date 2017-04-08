@@ -1,3 +1,7 @@
+/*score and comments:
+9 + 2(extra credit)
+Great job! Remember do not change the return type
+*/
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -6,7 +10,7 @@ public class A4Extra {
 	 * For example, given nums = {0, 1, 3}, return 2.
 	 *public static missingNumber(int[] nums) {       
 	}*/
-	public static void missingNumber(int[] nums) { 
+	public static void missingNumber(int[] nums) {                       //do not change the return type
 		ArrayList<Integer> missnumber = new ArrayList<Integer>();
 		int j = nums[0];
 		for (int i = 0; i <= nums.length-1; i++){
@@ -30,7 +34,7 @@ public class A4Extra {
  *public static void moveZeroes(int[] nums) {}
  */
 	
-	public static void moveZeroes(int[] nums) {
+	public static void moveZeroes(int[] nums) {            //correct
 	int j=0;
 	for (int i=0; i<= nums.length-1;i++){
 	if(nums[i] != 0){
@@ -49,7 +53,7 @@ public class A4Extra {
  * array. If it does not exist, return the maximum number. For example, given{3,2,1}, 
  * return 1; given{1,2}, return 2; given{2,2,3,1}, return 1.
  */
-	public int thirdMax(int[] nums) {
+	public int thirdMax(int[] nums) {                            //correct
         long tmp[] = {Long.MIN_VALUE,Long.MIN_VALUE,Long.MIN_VALUE};
         
         for(int num:nums){
